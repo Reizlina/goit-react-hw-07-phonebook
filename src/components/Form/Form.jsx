@@ -2,12 +2,13 @@ import { useSelector } from 'react-redux';
 import s from './Form.module.css';
 
 import Section from './Section/Section';
+import Loader from 'components/Loader';
 import FormInput from './FormInput/FormInput';
 import Contacts from './Contacts/Contacts';
 import SearchContact from './SearchContact/SearchContact';
 
 export default function Form() {
-  const contactsArr = useSelector(state => state.contacts);
+  const { contacts, isLoading, error } = useSelector(state => state);
 
   return (
     <div className={s.wrap}>
@@ -15,7 +16,8 @@ export default function Form() {
         <FormInput />
       </Section>
       <Section title="Contacts">
-        {contactsArr.contacts.length > 0 && <SearchContact />}
+        {isLoading && !error && <Loader />}
+        {contacts.length > 0 && <SearchContact />}
         <Contacts />
       </Section>
     </div>

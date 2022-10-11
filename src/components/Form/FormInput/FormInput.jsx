@@ -1,12 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { add } from '../../../redux/slice';
+import { addNewContact } from '../../../redux/operations';
+// import { nanoid } from 'nanoid';
 
 import Notiflix from 'notiflix';
 import s from './FormInput.module.css';
 
 export default function FormInput() {
   const dispatch = useDispatch();
-  const contactsArr = useSelector(state => state.contacts);
+  const { contacts } = useSelector(state => state);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -14,7 +15,7 @@ export default function FormInput() {
     const contactName = form.elements.name.value;
     const contactNumber = form.elements.number.value;
 
-    const nameOfContact = contactsArr.contacts.find(
+    const nameOfContact = contacts.find(
       contact => contact.name === contactName
     );
 
@@ -22,13 +23,13 @@ export default function FormInput() {
       Notiflix.Notify.failure(`${contactName} is already in contacts`, {
         position: 'center-center',
         failure: {
-          background: '#ff8080',
+          background: '#ec7839',
         },
       });
       form.name.value = '';
       return;
     }
-    dispatch(add({ name: contactName, number: contactNumber }));
+    dispatch(addNewContact({ name: contactName, phone: contactNumber }));
     form.reset();
   };
 
