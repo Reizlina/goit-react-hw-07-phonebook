@@ -23,11 +23,12 @@
   display: block;
 
   padding: 10px 20px;
-  background: #344f86;
+  background: #435f97;
   color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-weight: 700;
   letter-spacing: 2px;
-  transition: 0.3s all ease-in-out;
+  transition: 0.2s all ease-in-out;
   outline: none;
   border: 1px solid rgba(0, 0, 0, 1);
   box-shadow: 3px 3px 1px 1px #ec7839, 3px 3px 1px 2px rgba(0, 0, 0, 1);
@@ -35,7 +36,6 @@
 
 .button:hover {
   background: #ec7839;
-  color: white;
   border: 1px solid rgba(0, 0, 0, 1);
-  box-shadow: 3px 3px 1px 1px #344f86, 3px 3px 1px 2px rgba(0, 0, 0, 1);
+  box-shadow: 3px 3px 1px 1px #435f97, 3px 3px 1px 2px rgba(0, 0, 0, 1);
 }
