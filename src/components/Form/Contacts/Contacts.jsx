@@ -22,7 +22,7 @@ const Contacts = () => {
     return (
       <div className={s.wrap}>
         <img
-          src="https://www.memesmonkey.com/images/memesmonkey/d6/d6bbe7c94ae7a84640e192c1652ab582.jpeg"
+          src="http://www.quickmeme.com/img/26/2677b78624b1858a57d99e67c38e124dba7f6d7bd1428ec4836ab03729a5a5dd.jpg"
           alt="smile"
           width="300"
         />
